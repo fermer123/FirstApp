@@ -49,7 +49,6 @@ function buildPlugins({paths, isDev}: BuildOption): WebpackPluginInstance[] {
   return [
     new ModuleFederationPlugin({
       ...federationConfig,
-      library: {type: 'var', name: 'firstApp'},
       dts: {
         generateTypes: {
           extractRemoteTypes: true,
