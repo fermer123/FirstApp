@@ -1,15 +1,32 @@
-import {DefaultTheme} from 'styled-components';
-
+import {createTheme} from '@mui/material';
 import {blue, blueGrey, grey} from '@mui/material/colors';
 
-export const darkThemeColors: DefaultTheme = {
-  primaryColor: blueGrey[100],
-  secondaryColor: blue[300],
-  backGroundColor: grey[900],
-};
+export const darkMode = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: blueGrey[100],
+    },
+    secondary: {
+      main: blueGrey[100],
+    },
+    background: {
+      default: grey[900],
+    },
+  },
+});
 
-export const lightThemeColors: DefaultTheme = {
-  primaryColor: grey[900],
-  secondaryColor: blue[300],
-  backGroundColor: grey[50],
-};
+export const lightMode = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: grey[900],
+    },
+    secondary: {
+      main: blue[300],
+    },
+    background: {
+      default: grey[50],
+    },
+  },
+});

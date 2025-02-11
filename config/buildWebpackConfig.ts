@@ -26,7 +26,7 @@ function buildWebpackConfig(option: BuildOption): Configuration {
     devtool: isDev ? 'inline-source-map' : undefined,
     plugins: buildPlugins(option),
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(option),
     },
   };
 }

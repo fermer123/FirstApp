@@ -34,16 +34,6 @@ function buildPlugins({paths, isDev}: BuildOption): WebpackPluginInstance[] {
         eager: true,
         requiredVersion: packageJson.dependencies['@mui/material'],
       },
-      '@mui/styled-engine-sc': {
-        singleton: true,
-        eager: true,
-        requiredVersion: packageJson.dependencies['@mui/styled-engine-sc'],
-      },
-      'styled-components': {
-        singleton: true,
-        eager: true,
-        requiredVersion: packageJson.dependencies['styled-components'],
-      },
     },
   };
   return [

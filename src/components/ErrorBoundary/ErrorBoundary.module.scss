@@ -1,8 +1,5 @@
-import styled from 'styled-components';
 
-import {Box} from '@mui/material';
-
-export const Container = styled(Box)`
+.container {
   display: flex;
   position: fixed;
   top: 50%;
@@ -14,4 +11,5 @@ export const Container = styled(Box)`
   transform: translate(-50%, -50%);
   max-width: 500px;
   text-align: center;
-`;
+}
+

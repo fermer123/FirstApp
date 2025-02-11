@@ -1,9 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
 import {Component, ErrorInfo, ReactNode} from 'react';
 
-import {Button} from '@mui/material';
+import {Box, Button} from '@mui/material';
 
-import {Container} from './ErrorBoundary.styled';
+import styles from './ErrorBoundary.module.scss';
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -36,11 +36,11 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   render(): ReactNode {
     if (this.state.hasError) {
       return (
-        <Container>
+        <Box className={styles?.container}>
           <div>Неизвестная ошибка</div>
           <div>{this.state.hasError}</div>
           <Button onClick={ErrorBoundary.handleGoBack}>Вернуться назад</Button>
-        </Container>
+        </Box>
       );
     }
 

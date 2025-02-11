@@ -5,6 +5,7 @@
     }
   },
   "compilerOptions": {
+    "plugins": [{"name": "typescript-plugin-css-modules"}],
     "outDir": "./dist",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -24,9 +25,9 @@
       "@utils/*": ["./src/utils/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@app/*": ["./src/app/*"],
-      "@provider/*": ["src/provider/*"],
-      "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
+      "@provider/*": ["src/provider/*"]
     },
+
     "lib": ["esnext", "dom", "dom.iterable"],
     "sourceMap": true,
     "noImplicitAny": true,

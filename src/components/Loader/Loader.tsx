@@ -1,12 +1,14 @@
 import {FC} from 'react';
 
-import {Spinner, SpinnerContainer} from './Loader.styled';
+import {Box} from '@mui/material';
+
+import styles from './Loader.module.scss';
 
 const Loader: FC = () => {
   return (
-    <SpinnerContainer>
-      <Spinner />
-    </SpinnerContainer>
+    <Box className={styles.spinnerContainer}>
+      <Box className={styles.spinner} />
+    </Box>
   );
 };
 

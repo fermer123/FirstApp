@@ -1,19 +1,14 @@
-import styled, {createGlobalStyle} from 'styled-components';
-
-import {Box} from '@mui/material';
-
-const GlobalStyle = createGlobalStyle`
-body{
+body {
   font-style: normal;
   font-size: 16px;
-  color: ${({theme}) => theme?.primaryColor};
-  background-color: ${({theme}) => theme.backGroundColor};
+  color: var(--primary-color);
+  background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-   font-weight: 400;
-   line-height:1;
- }
+  font-weight: 400;
+  line-height: 1;
+}
 *,
 ::after,
 ::before {
@@ -60,9 +55,3 @@ img {
 ::-webkit-scrollbar {
   width: 0;
 }
-`;
-export const ContentContainer = styled(Box)`
-  margin-top: 3rem; /* Высота хедера */
-`;
-
-export default GlobalStyle;
