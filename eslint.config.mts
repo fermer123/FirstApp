@@ -13,10 +13,11 @@ import importPlugin from 'eslint-plugin-import';
 import eslintReact from 'eslint-plugin-react';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import typescriptParser from '@typescript-eslint/parser';
+
 /** @type {import('eslint').Linter.Config[]} */
 export default tseslint.config({
   ...js.configs.recommended,
-  ...tseslint.configs.recommended,
   plugins: {
     'sort-react-dependency-arrays': depSort,
     'react-hooks': reactHooks,
@@ -26,21 +27,30 @@ export default tseslint.config({
     'jsx-a11y': jsxA11y,
     import: importPlugin,
     prettier: prettierPlugin,
-    'typescript-eslint': tsPlugin,
+    'typescript-eslint': tseslint.plugin,
+    '@typescript-eslint': tsPlugin,
     'react-refresh': reactRefresh,
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   languageOptions: {
+    parser: typescriptParser,
     globals: {
       ...globals.node,
       ...globals.browser,
       ...globals.es2021,
     },
     parserOptions: {
-      projectService: true,
       tsconfigRootDir: import.meta.dirname,
+      ecmaFeatures: {
+        jsx: true,
+      },
     },
   },
-  files: ['**/*.{js,mjs,mts,cjs,ts,jsx,tsx}'],
+  files: ['**/*.{js,ts,jsx,tsx}'],
   rules: {
     ...prettierConfig.rules,
     'import/no-cycle': 'off',
@@ -62,6 +72,7 @@ export default tseslint.config({
         argsIgnorePattern: '^_',
       },
     ],
+
     'no-extra-boolean-cast': 'warn',
     'no-empty': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
@@ -81,12 +92,6 @@ export default tseslint.config({
     ],
     'react/react-in-jsx-scope': 'off',
     'import/no-unresolved': 'off',
-    '@typescript-eslint/no-misused-promises': [
-      'error',
-      {
-        checksVoidReturn: false,
-      },
-    ],
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': [
       'warn',
