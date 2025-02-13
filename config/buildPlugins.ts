@@ -34,6 +34,17 @@ function buildPlugins({paths, isDev}: BuildOption): WebpackPluginInstance[] {
         eager: true,
         requiredVersion: packageJson.dependencies['@mui/material'],
       },
+      '@emotion/react': {
+        singleton: true,
+        eager: true,
+        requiredVersion: packageJson.dependencies['@emotion/react'],
+      },
+
+      '@emotion/styled': {
+        singleton: true,
+        eager: true,
+        requiredVersion: packageJson.dependencies['@emotion/styled'],
+      },
     },
   };
   return [
@@ -51,7 +62,6 @@ function buildPlugins({paths, isDev}: BuildOption): WebpackPluginInstance[] {
           consumeAPITypes: true,
           deleteTypesFolder: true,
           maxRetries: 3,
-          abortOnError: true,
         },
       },
     }),
