@@ -10,8 +10,6 @@ import {
 
 const THEME = 'theme';
 
-//eslint-ignore
-
 type TThemeColors = 'LIGHT' | 'DARK';
 
 export interface IThemeContext {
