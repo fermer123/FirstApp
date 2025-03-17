@@ -16,7 +16,7 @@ root.render(
     <ErrorBoundary>
       <ThemeProvider>
         <Theme>
-          <BusinessСard value='Карточка' />
+          <BusinessСard name='Igor Smolin' />
         </Theme>
       </ThemeProvider>
     </ErrorBoundary>
