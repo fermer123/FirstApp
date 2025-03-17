@@ -7,7 +7,11 @@ import packageJson from '../package.json';
 
 import {BuildOption} from './types/config';
 
-function buildPlugins({paths, isDev}: BuildOption): WebpackPluginInstance[] {
+function buildPlugins({
+  paths,
+  isDev,
+  port,
+}: BuildOption): WebpackPluginInstance[] {
   const federationConfig = {
     // Имя
     name: 'firstApp',
@@ -76,7 +80,7 @@ function buildPlugins({paths, isDev}: BuildOption): WebpackPluginInstance[] {
     }),
     new webpack.DefinePlugin({
       isDev: JSON.stringify(isDev),
-      baseURL: JSON.stringify('http://localhost:3000/'),
+      baseURL: JSON.stringify(port),
     }),
     isDev ? new webpack.HotModuleReplacementPlugin() : undefined,
   ];
